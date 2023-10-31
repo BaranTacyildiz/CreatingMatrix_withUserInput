@@ -5,18 +5,19 @@ matrix1 = input("Name of the matrix = ")
 x = int(input("\nHow do you create your matrix? \n1) Create with user input \n2) Create random \nChoose 1 or 2 => "))
 
 if x == 1:
-    matrix1 = [[0 for x in range(3)]for y in range(3)] #creating a 3x3 Zero matrix
-    for i in range(3): #creating rows of matrix
-        for j in range(3): #creating columns of matrix
+    size = int(input("Choose size of your matrix = "))
+    matrix1 = [[0 for x in range(size)]for y in range(size)] #creating a 3x3 Zero matrix
+    for i in range(size): #creating rows of matrix
+        for j in range(size): #creating columns of matrix
             matrix1[i][j] = int(input(str(i+1) + ". row " + str(j+1) + ". column element of first matrix : ")) #input elements from user
         
-    for i in range(3): 
-        for j in range(3):
+    for i in range(size): 
+        for j in range(size):
             print("%5d" % (matrix1[i][j]), end='')
         print() 
 
 if x == 2:
-    
+    size = int(input("Choose size of your matrix = "))
     while True:
         minvalue = int(input("What is the minimum value of the matrix? => "))
         maxvalue = int(input("What is the maximum value of the matrix? => "))
@@ -27,13 +28,13 @@ if x == 2:
             
 
 
-    matrix1 = [[0 for x in range(3)]for y in range(3)] #creating a 3x3 Zero matrix
-    for i in range(3): #creating rows of matrix
-        for j in range(3): #creating columns of matrix
+    matrix1 = [[0 for x in range(size)]for y in range(size)] #creating a 3x3 Zero matrix
+    for i in range(size): #creating rows of matrix
+        for j in range(size): #creating columns of matrix
             matrix1[i][j] = random.randint(minvalue,maxvalue)
         
-    for i in range(3): 
-        for j in range(3):
+    for i in range(size): 
+        for j in range(size):
             print("%5d" % (matrix1[i][j]), end='')
         print() 
 
